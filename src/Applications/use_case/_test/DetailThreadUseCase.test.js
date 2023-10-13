@@ -4,6 +4,7 @@ const DetailThreadUseCase = require("../DetailThreadUseCase");
 
 describe('DetailThreadUseCase', () => {
   it('should get return detail thread correctly', async () => {
+    // Arrange
     const useCasePayload = {
       thread: 'thread-h_123',
     };
@@ -33,6 +34,7 @@ describe('DetailThreadUseCase', () => {
       },
     ];
   
+     /** creating dependency of use case */
     const mockThreadRepository = new ThreadRepository();
     const mockCommentRepository = new CommentRepository();
   
@@ -45,8 +47,10 @@ describe('DetailThreadUseCase', () => {
       commentRepository: mockCommentRepository
     });
   
+    // Act
     const detailThread = await detailThreadUseCase.execute(useCasePayload);
   
+    // Assert
     expect(mockThreadRepository.getDetailThread).toHaveBeenCalledWith(useCasePayload.thread);
     expect(mockCommentRepository.getCommentsThread).toHaveBeenCalledWith(useCasePayload.thread);
     expect(detailThread).toStrictEqual({

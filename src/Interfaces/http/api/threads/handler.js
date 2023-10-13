@@ -7,8 +7,6 @@ class ThreadsHandler {
 
     this.postThreadHandler = this.postThreadHandler.bind(this);
     this.getDetailThreadHandler = this.getDetailThreadHandler.bind(this);
-    // this.postReplyOnThreadComment = this.postReplyOnThreadComment(this);
-    // this.deleteReplyOnThreadComment = this.deleteReplyOnThreadComment(this);
   }
 
   async postThreadHandler(request, h) {
@@ -44,13 +42,6 @@ class ThreadsHandler {
     response.code(200);
     return response;
   }
-
-  // async postReplyOnThreadComment(request, h) {
-  // }
-
-  // async deleteReplyOnThreadComment(request, h) {
-
-  // }
 }
 
 module.exports = ThreadsHandler;
