@@ -13,7 +13,7 @@ describe('DetailThreadUseCase', () => {
       id: 'thread-h_123',
       title: 'sebuah thread',
       body: 'sebuah body thread',
-      date: '2021-08-08 14.00',
+      date: '2023-10-13 13:30',
       username: 'dicoding',
     }
   
@@ -21,14 +21,14 @@ describe('DetailThreadUseCase', () => {
       {
         id: 'comment-123',
         username: 'dicoding',
-        date: '2021-08-08 14.00',
+        date: '2023-10-13 13:30',
         content: 'sebuah comment',
         is_deleted: 0,
       },
       {
         id: 'comment-123',
         username: 'dicoding',
-        date: '2021-08-08 14.00',
+        date: '2023-10-13 13:30',
         content: 'sebuah comment',
         is_deleted: 1,
       },
@@ -58,19 +58,19 @@ describe('DetailThreadUseCase', () => {
         id: 'thread-h_123',
         title: 'sebuah thread',
         body: 'sebuah body thread',
-        date: '2021-08-08 14.00',
+        date: '2023-10-13 13:30',
         username: 'dicoding',
         comments: [
           {
             id: 'comment-123',
             username: 'dicoding',
-            date: '2021-08-08 14.00',
+            date: '2023-10-13 13:30',
             content: 'sebuah comment',
           },
           {
             id: 'comment-123',
             username: 'dicoding',
-            date: '2021-08-08 14.00',
+            date: '2023-10-13 13:30',
             content: '**komentar telah dihapus**',
           },
         ],
