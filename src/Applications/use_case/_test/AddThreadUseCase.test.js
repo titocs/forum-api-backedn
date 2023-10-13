@@ -8,7 +8,7 @@ describe('AddThreadUseCase', () => {
     // Arrange
     const useCasePayload = {
       title: 'sebuah thread',
-      body: 'Lorem ipsum dolor sit amet',
+      body: 'Ini adalah contoh thread',
       owner: 'user-123',
     }
 
