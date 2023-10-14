@@ -4,12 +4,12 @@ const DeleteCommentOnThreadUseCase = require("../DeleteCommentOnThreadUseCase");
 
 describe('DeleteCommentOnThreadUseCase', () => {
   it('should throw error if use case payload not contain thread id and comment id', async () => {
+    // Arrange
     const useCasePayload = {};
     const deleteCommentOnThreadUseCase = new DeleteCommentOnThreadUseCase({});
 
-    await expect(deleteCommentOnThreadUseCase.execute(useCasePayload))
-      .rejects
-      .toThrowError('DELETE_COMMENT_USE_CASE.NOT_CONTAIN_VALID_PAYLOAD');
+    // Action & Assert
+    await expect(deleteCommentOnThreadUseCase.execute(useCasePayload)).rejects.toThrowError('DELETE_COMMENT_USE_CASE.NOT_CONTAIN_VALID_PAYLOAD');
   });
 
   it('should throw error if payload not string', async () => {
@@ -22,9 +22,7 @@ describe('DeleteCommentOnThreadUseCase', () => {
     const deleteCommentOnThreadUseCase = new DeleteCommentOnThreadUseCase({});
 
     // Action & Assert
-    await expect(deleteCommentOnThreadUseCase.execute(useCasePayload))
-      .rejects
-      .toThrowError('DELETE_COMMENT_USE_CASE.PAYLOAD_NOT_MEET_DATA_TYPE_SPECIFICATION');
+    await expect(deleteCommentOnThreadUseCase.execute(useCasePayload)).rejects.toThrowError('DELETE_COMMENT_USE_CASE.PAYLOAD_NOT_MEET_DATA_TYPE_SPECIFICATION');
   });
 
   it('should orchestrating the delete comment action correctly', async () => {
@@ -34,6 +32,7 @@ describe('DeleteCommentOnThreadUseCase', () => {
       comment: 'comment-_pby2_123',
       owner: 'user_123',
     };
+    
     const mockCommentRepository = new CommentRepository();
     const mockThreadRepository = new ThreadRepository();
 

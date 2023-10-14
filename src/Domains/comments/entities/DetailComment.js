@@ -1,7 +1,7 @@
 class DetailComment {
   constructor(payload) {
     this._verifyPayload(payload);
-    const comments = this._remappingPayload(payload);
+    const comments = this._parsePayload(payload);
     this.comments = comments;
   }
 
@@ -15,7 +15,7 @@ class DetailComment {
     }
   }
 
-  _remappingPayload({ comments }) {
+  _parsePayload({ comments }) {
     return comments.map((comment) => ({
       id: comment.id,
       username: comment.username,
